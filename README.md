@@ -5,5 +5,6 @@ This repository provides tools and setup instructions to integrate blockchain te
 - [Getting Started](#getting-started)
 - [Steps for Installation](#installation)
 - [Steps for integration](#configuration)
-- [Smart Contracts](#documentation)
+- [Smart Contracts](#Projectcodes)
+- [Documentation](#Documentation)
 - [License](#license)
