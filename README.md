@@ -3,8 +3,7 @@ This repository provides tools and setup instructions to integrate blockchain te
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
+- [Steps for Installation](#installation)
+- [Steps for integration](#configuration)
 - [Documentation](#documentation)
 - [License](#license)
