@@ -1,0 +1,15 @@
+ 5. Deployment and Automation Steps 
+ 
+Step 1: Compile the Contracts 
+
+Run the following command to compile all the contracts: truffle compile
+
+Step 2:  Deploy the Contracts
+
+Use Truffle to deploy the contracts to Ganache: truffle migrate --reset
+
+Step 3:  Run the Automation Script
+
+Execute the automation script to register a drone, takeoff, land, and log the events automatically:
+
+truffle exec automation.js
