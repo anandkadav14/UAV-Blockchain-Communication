@@ -1,1 +1,26 @@
+1. Drone Identification Smart Contract
 
+This contract registers and tracks drone ownership.
+
+// contracts/DroneIdentification.sol
+pragma solidity ^0.8.10;
+
+contract DroneIdentification {
+    struct Drone {
+        string droneID;
+        string owner;
+        bool isRegistered;
+    }
+
+    mapping(string => Drone) public drones;
+
+    function registerDrone(string memory _droneID, string memory _owner) public {
+        require(!drones[_droneID].isRegistered, "Drone is already registered");
+        drones[_droneID] = Drone(_droneID, _owner, true);
+    }
+
+    function getDroneOwner(string memory _droneID) public view returns (string memory) {
+        require(drones[_droneID].isRegistered, "Drone is not registered");
+        return drones[_droneID].owner;
+    }
+}
