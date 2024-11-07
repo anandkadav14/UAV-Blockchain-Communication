@@ -1,0 +1,22 @@
+6. Migration File for Deployment 
+
+Ensure your migration file deploys the contracts in the correct order:
+
+// migrations/2_deploy_contracts.js
+const DroneIdentification = artifacts.require("DroneIdentification");
+const DroneFlight = artifacts.require("DroneFlight");
+const DroneCommLog = artifacts.require("DroneCommLog");
+
+module.exports = async function(deployer) {
+  // Deploy DroneIdentification contract
+  await deployer.deploy(DroneIdentification);
+  const droneIdentification = await DroneIdentification.deployed();
+
+  // Deploy DroneFlight and pass the DroneIdentification address
+  await deployer.deploy(DroneFlight, droneIdentification.address);
+
+  // Deploy DroneCommLog
+  await deployer.deploy(DroneCommLog);
+};
+
+ 
