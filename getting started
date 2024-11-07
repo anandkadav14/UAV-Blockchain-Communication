@@ -1,0 +1,39 @@
+1. Operating System
+Primary OS: Windows 10 or Windows 11 (recommended for compatibility with Mission Planner, AirSim, and Unreal Engine).
+Secondary OS (optional for network configuration/testing): Ubuntu 20.04 or later can be used in conjunction with Windows if needed, particularly for running AirSim in headless mode.
+2. Software Requirements
+A. Unreal Engine 4.27.2
+Unreal Engine Version: 4.27.2 (specifically this version for AirSim compatibility)
+Download Source: Install via Epic Games Launcher
+B. Epic Games Launcher
+Required to install and manage Unreal Engine versions.
+Download Source: Epic Games Launcher
+C. AirSim
+Version: Latest version from the AirSim GitHub repository.
+Build Requirement: You will need to compile the plugin from the source using Visual Studio.
+D. Visual Studio 2019 or Later
+Required Edition: Visual Studio 2019 or later with the following workloads:
+Desktop development with C++
+Game development with C++
+C++/CLI Support and .NET Desktop Development components are also required.
+Download Source: Visual Studio
+E. Mission Planner
+Version: Latest stable release (recommended).
+Download Source: Mission Planner
+Purpose: Acts as the Ground Control Station (GCS) for controlling and monitoring drones within the AirSim simulation.
+F. Python 3.8 or Later
+Version: Python 3.8 or later (Python 3.9 recommended for compatibility).
+Installation: Ensure Python is added to the system PATH.
+Download Source: Python
+G. Git
+Purpose: Required to clone the AirSim repository.
+Download Source: Git
+3. Optional/Recommended Software
+A. QGroundControl (Alternative to Mission Planner)
+Version: QGroundControl Daily v4.3.0 or later.
+Purpose: Alternative Ground Control Station (GCS) software that can work with PX4 and MAVLink.
+Download Source: QGroundControl
+B. Network Tools
+Tools such as Wireshark (for network monitoring) or IP Scanner to test network connectivity and ensure proper IP and port configurations.
+C. Windows Firewall Configuration
+Allow specific ports used by AirSim (e.g., ApiServerPort) and Mission Planner through the Windows Firewall.
