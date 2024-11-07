@@ -12,6 +12,7 @@ Ensure you also have the C++/CLI Support and .NET desktop development installed.
 Python:
 Install Python 3.8 or later from the official website.
 Add Python to your system PATH during installation.
+
 Step 2: Install Unreal Engine 4.27.2
 Epic Games Launcher:
 Download and install the Epic Games Launcher from the Epic Games website.
@@ -21,6 +22,7 @@ In the Epic Games Launcher, go to the Unreal Engine tab.
 Under the Library section, click the + button next to Engine Versions.
 Select version 4.27.2 and click Install.
 Choose the installation directory and start the installation.
+
 Step 3: Install AirSim Plugin
 Clone AirSim Repository:
 Open a terminal and navigate to your preferred directory.
@@ -39,6 +41,7 @@ Copy code
 build.cmd
 This script will download the necessary dependencies and compile AirSim.
 After the build is complete, the Unreal/Plugins/AirSim folder will contain the AirSim plugin.
+
 Step 4: Create an Unreal Engine Project
 Open Unreal Engine 4.27.2:
 Launch the Epic Games Launcher and open Unreal Engine 4.27.2.
@@ -52,6 +55,7 @@ Integrate AirSim Plugin:
 After the project is created, close Unreal Engine.
 Copy the AirSim folder from the Unreal/Plugins/ directory (from the cloned AirSim repository) into your Unreal project’s Plugins folder. If the Plugins folder does not exist, create it in the root directory of your project.
 Reopen your Unreal Engine project. The AirSim plugin should be detected and enabled automatically.
+
 Step 5: Install Mission Planner
 Download and Install:
 Download the Mission Planner installer from the official website.
@@ -88,6 +92,7 @@ Go to Setup > Optional Hardware > Telemetry Radio.
 Set the Remote IP to the IP address of the machine running Unreal Engine.
 Set the Remote Port to the ApiServerPort specified in the settings.json file (41451 in this example).
 Click Connect.
+
 Step 7: Test the Integration
 Launch Simulation:
 Open your Unreal Engine project and start the simulation by pressing the Play button.
@@ -95,6 +100,7 @@ AirSim should now be active, and you should see the simulated drone in the scene
 Connect Mission Planner:
 In Mission Planner, click the Connect button to establish a connection with the simulated drone.
 You should see telemetry data and be able to control the drone from Mission Planner.
+
 Step 8: Optional - Multiple Drones (Swarm Simulation)
 Modify settings.json:
 For multiple drones, expand the Vehicles section of settings.json:
@@ -124,6 +130,7 @@ Ensure each drone has a unique ApiServerPort.
 Configure Mission Planner:
 Open multiple instances of Mission Planner if you have multiple GCS computers.
 Connect each instance to a different drone by specifying the respective ApiServerPort.
+
 Step 9: Final Checks
 Ensure the local network connection is stable.
 Verify that Windows Firewall allows communication on the specified ports.
