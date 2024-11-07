@@ -1,0 +1,14 @@
+Example Console Output:
+
+ 
+Registering Drone...
+Drone Registered: DRONE_001 - Owner: Alice
+Drone Takeoff...
+Drone in Flight.
+Drone Landing...
+Drone Landed.
+Logging Drone Communication...
+Flight Log added.
+Logs: [
+  { droneID: 'DRONE_001', message: 'Drone has completed its flight.', timestamp: 1697702345 }
+]
