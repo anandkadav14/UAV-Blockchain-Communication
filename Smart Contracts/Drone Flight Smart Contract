@@ -1,0 +1,36 @@
+2. Drone Flight Smart Contract
+
+This contract handles takeoff and landing for drones.
+
+ 
+// contracts/DroneFlight.sol
+pragma solidity ^0.8.10;
+
+import "./DroneIdentification.sol";
+
+contract DroneFlight {
+    enum Status {Grounded, InFlight}
+    mapping(string => Status) public flightStatus;
+
+    DroneIdentification droneIdentification;
+
+    constructor(address _droneIdentificationAddress) {
+        droneIdentification = DroneIdentification(_droneIdentificationAddress);
+    }
+
+    function takeOff(string memory _droneID) public {
+        require(droneIdentification.getDroneOwner(_droneID) != "", "Drone is not registered");
+        require(flightStatus[_droneID] == Status.Grounded, "Drone is already in flight");
+        flightStatus[_droneID] = Status.InFlight;
+    }
+
+    function land(string memory _droneID) public {
+        require(droneIdentification.getDroneOwner(_droneID) != "", "Drone is not registered");
+        require(flightStatus[_droneID] == Status.InFlight, "Drone is not in flight");
+        flightStatus[_droneID] = Status.Grounded;
+    }
+
+    function getFlightStatus(string memory _droneID) public view returns (Status) {
+        return flightStatus[_droneID];
+    }
+}
