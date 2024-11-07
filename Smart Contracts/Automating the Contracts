@@ -1,0 +1,46 @@
+// This script automates the interaction with the smart contracts, from registering a drone to taking off, landing, and logging the event.
+
+// automation.js
+const DroneIdentification = artifacts.require("DroneIdentification");
+const DroneFlight = artifacts.require("DroneFlight");
+const DroneCommLog = artifacts.require("DroneCommLog");
+
+module.exports = async function(callback) {
+  try {
+    // Drone and owner information
+    const droneID = "DRONE_001";
+    const owner = "Alice";
+
+    // Step 1: Register the drone
+    let droneIdentification = await DroneIdentification.deployed();
+    console.log("Registering Drone...");
+    await droneIdentification.registerDrone(droneID, owner);
+    console.log(`Drone Registered: ${droneID} - Owner: ${owner}`);
+
+    // Step 2: Takeoff the drone
+    let droneFlight = await DroneFlight.deployed();
+    console.log("Drone Takeoff...");
+    await droneFlight.takeOff(droneID);
+    console.log("Drone in Flight.");
+
+    // Step 3: Land the drone
+    console.log("Drone Landing...");
+    await droneFlight.land(droneID);
+    console.log("Drone Landed.");
+
+    // Step 4: Log the communication
+    let droneCommLog = await DroneCommLog.deployed();
+    console.log("Logging Drone Communication...");
+    await droneCommLog.addLog(droneID, "Drone has completed its flight.");
+    console.log("Flight Log added.");
+
+    // Step 5: Retrieve logs to verify
+    let logs = await droneCommLog.getLogs();
+    console.log("Logs: ", logs);
+
+  } catch (error) {
+    console.error(error);
+  }
+
+  callback();
+};
