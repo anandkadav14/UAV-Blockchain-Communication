@@ -1,0 +1,6 @@
+7. Automated Flow Overview
+
+1. Drone Registration: The drone is registered using the DroneIdentification contract.
+2. Drone Takeoff/Landing: The flight operations are managed via the DroneFlight contract, ensuring only registered drones can take off and land.
+3. Logging: The DroneCommLog contract records key events, such as takeoff and landing, in an immutable log.
+4. Automation: By running `automation.js`, the entire process is automated for fast execution during your demonstration.
